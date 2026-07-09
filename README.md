@@ -32,17 +32,17 @@ The backend strictly adheres to RESTful API principles and MVC architecture to e
 ### System Requirements:
 
 - Go v1.21 or higher
-- PostgreSQL v13 or higher
+- PostgreSQL v13 or higher (or Docker & Docker Compose)
 
 ### 1. Database Setup
 
-Ensure you have a PostgreSQL server running. Open your PostgreSQL CLI (`psql`) and execute the following:
+We use Docker to spin up the PostgreSQL database instantly. Ensure Docker is running, then execute the following command in the root directory:
 
-```sql
-CREATE DATABASE chromia_db;
-CREATE USER chromia_admin WITH PASSWORD 'chromiasatset123';
-GRANT ALL PRIVILEGES ON DATABASE chromia_db TO chromia_admin;
+```bash
+docker-compose up -d
 ```
+
+This will automatically pull the PostgreSQL image and create a container with the `chromia_db` database, user `chromia_admin`, and password `chromiasatset123` on port 5432.
 
 ### 2. Repository Setup
 
